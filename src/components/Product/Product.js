@@ -9,7 +9,13 @@ const Product = (props) => {
   
     return (
         <div className='product'>
-            <img src={img} alt="" />
+            <img
+            src={img}
+            alt=""
+            onError={(e) => {
+                e.currentTarget.src = "https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg"
+            }} 
+            />
             <div className='product-info'>
                 <p className='product-name'>{name}</p>
                 <p>Price: ${price}</p>
